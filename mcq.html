@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiple Choice Question</title>
+	<style>
+		.tab {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>What is the capital of France?</h1>
+	<div>
+		<input type="radio" name="answer" value="a">A. Madrid<br>
+		<input type="radio" name="answer" value="b">B. Rome<br>
+		<input type="radio" name="answer" value="c">C. Paris<br>
+	</div>
+	<button onclick="showTab()">Submit</button>
+	<div id="feedback" class="tab"></div>
+	<script>
+		function showTab() {
+			var answer = document.querySelector('input[name="answer"]:checked').value;
+			var feedback = document.getElementById('feedback');
+			if (answer === 'c') {
+				feedback.innerHTML = '<p>Correct!</p>';
+				feedback.style.display = 'block';
+			} else {
+				feedback.innerHTML = '<p>Incorrect. The correct answer is C.</p>';
+				feedback.style.display = 'block';
+			}
+		}
+	</script>
+</body>
+</html>
